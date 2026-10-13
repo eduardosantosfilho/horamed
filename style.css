@@ -1,0 +1,127 @@
+/* ==========================================================
+   HORA DO REMÉDIO – style.css
+   Complementa o Bootstrap 5 (carregado antes deste arquivo)
+   ========================================================== */
+
+/* ---------- 1. BASE (página inteira) ---------- */
+
+body {
+    background: #f1f8f4;   /* verde bem claro */
+    font-size: 1.25rem;    /* fonte maior, pensando em idosos */
+}
+
+/* ---------- 2. NAVEGAÇÃO E RODAPÉ ---------- */
+
+.topo {
+    background: #198754;   /* verde da barra de menu */
+}
+
+.ods {
+    background: #4c9f38;   /* verde da ODS 3 (rodapé e cartão da página Sobre) */
+    color: #fff;
+}
+
+/* ---------- 3. PÁGINA INICIAL: RELÓGIO ---------- */
+
+.relogio {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ---------- 4. CARTÕES ---------- */
+
+/* Serviços: faixa colorida na lateral esquerda */
+.sv {
+    border-width: 0 0 0 12px;
+    border-style: solid;
+}
+
+/* Remédios: faixa colorida no topo (a cor vem do style inline) */
+.card-remedio {
+    border-width: 12px 0 0 0;
+    border-style: solid;
+}
+
+/* Círculo com o ícone 💊 ou ✅ dentro do cartão do remédio */
+.bolinha {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 4px solid #212529;
+}
+
+
+/* ---------- 5. FORMULÁRIO DE CADASTRO ---------- */
+
+/* Botões grandes (mais fáceis de tocar) */
+.btn-lg {
+    font-size: 1.4rem;
+    padding: 0.9rem 1.5rem;
+}
+
+/* Bolinhas de escolha de cor */
+.cor-op {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    outline: 2px solid #adb5bd;
+    cursor: pointer;
+}
+
+/* Contorno grosso na cor selecionada */
+input.cor-radio:checked + label.cor-op {
+    outline: 5px solid #212529;
+}
+
+
+/* ---------- 6. TELA DE ALARME (tela cheia) ---------- */
+
+/* Escondida por padrão; o JS adiciona a classe "ativo" para exibir */
+#alarme {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 2000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
+#alarme.ativo {
+    display: flex;
+}
+
+/* Ícones grandes (⏰ e 💊) */
+#alarme .grande {
+    font-size: 6rem;
+}
+
+
+/* ---------- 7. ANIMAÇÃO ---------- */
+
+.pisca {
+    animation: pisca 1s infinite;
+}
+
+@keyframes pisca {
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Acessibilidade: desliga a animação para quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .pisca {
+        animation: none;
+    }
+}
+
